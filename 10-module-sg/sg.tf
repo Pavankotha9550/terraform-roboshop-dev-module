@@ -1,9 +1,10 @@
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic and all outbound traffic"
-  vpc_id      = aws_vpc.main.id
+resource "aws_security_group" "roboshop-sg" {
+  name        = "${var.project}-${var.environment}-frontend"
+  description = var.description
+  vpc_id      = var.vpc_id
 
   tags = {
-    Name = "allow_tls"
+    Name="${var.project}-${var.environment}-frontend"
+    env=var.environment
   }
 }
