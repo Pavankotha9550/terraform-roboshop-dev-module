@@ -14,6 +14,6 @@ data "aws_ami" "DevOps_practice_ami_id" {
   owners = ["973714476881"] 
 }
 
-data "aws_security_group" "bastion"{
+data "aws_ssm_parameter" "bastion"{
     name= "bastion-sg_id"
 }
