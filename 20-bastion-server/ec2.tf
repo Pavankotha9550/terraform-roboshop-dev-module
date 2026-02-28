@@ -2,7 +2,7 @@
 resource "aws_instance" "bastion" {
   ami           = data.aws_ami.DevOps_practice_ami_id.id
   instance_type = "t3.micro"
-  vpc_security_group_ids= [data.aws_ssm_parameter.bastion.name]
+  vpc_security_group_ids= [data.aws_ssm_parameter.bastion.id]
 
   tags = {
     Name="${var.project}-${var.environment}-bastion"
