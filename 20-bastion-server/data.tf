@@ -15,5 +15,5 @@ data "aws_ami" "DevOps_practice_ami_id" {
 }
 
 data "aws_security_group" "bastion"{
-    name= bastion-sg_id
+    name= "bastion-sg_id"
 }
