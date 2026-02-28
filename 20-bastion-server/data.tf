@@ -17,3 +17,4 @@ data "aws_ami" "DevOps_practice_ami_id" {
 data "aws_ssm_parameter" "bastion"{
     name= "bastion-sg_id"
 }
+
