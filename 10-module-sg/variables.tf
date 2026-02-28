@@ -8,6 +8,10 @@ variable "environment"{
     type=string
 }
 
+variable "server"{
+    type=string
+}
+
 variable "description"{
-    default={}
+    
 }
