@@ -1,4 +1,4 @@
-output "sg_id-frontend"{
+output "sg_id"{
     value= aws_security_group.roboshop-sg.id
 }
 
