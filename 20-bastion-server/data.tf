@@ -15,7 +15,7 @@ data "aws_ami" "DevOps_practice_ami_id" {
 }
 
 data "aws_ssm_parameter" "bastion"{
-    name= "bastion-sg_id"
+    name= "/${var.project}/${var.environment}/bastion-sg_id"
 }
 
 data "aws_ssm_parameter" "public_subnet_id"{
