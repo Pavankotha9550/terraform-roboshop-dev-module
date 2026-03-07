@@ -15,6 +15,9 @@ variable "zone_name"{
 }
 
 variable "component"{
-    
+    typr = String
 }
 
+variable "priority"{
+    type = number
+}

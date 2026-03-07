@@ -164,7 +164,7 @@ resource "aws_autoscaling_policy" "main" {
 
 resource "aws_lb_listener_rule" "main" {
   listener_arn = data.aws_ssm_parameter.alb-ARN.value
-  priority     = 10
+  priority     = var.priority
 
   action {
     type             = "forward"
