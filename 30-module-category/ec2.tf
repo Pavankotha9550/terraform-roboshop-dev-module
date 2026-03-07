@@ -163,7 +163,7 @@ resource "aws_autoscaling_policy" "main" {
 }
 
 resource "aws_lb_listener_rule" "main" {
-  listener_arn = local.listener_arn
+  listener_arn = local.listener_arns
   priority     = var.priority
 
   action {
