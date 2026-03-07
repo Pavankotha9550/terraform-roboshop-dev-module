@@ -6,4 +6,6 @@ locals {
     component= var.component
     #vpc_security_group_ids= data.aws_ssm_parameter.local.component.value
     #host = aws_instance.${local.component}.private_ip
+
+    subnet = var.component == "frontend" ? split("," ,data.aws_ssm_parameter.public_subnet_id.value)[0] : split("," ,data.aws_ssm_parameter.private_subnet_id.value)[0]
 }
