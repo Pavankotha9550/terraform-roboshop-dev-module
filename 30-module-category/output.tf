@@ -1,3 +1,3 @@
 output "arn"{
-    value = local.listener_arn
+    value = local.listener_arns
 }
