@@ -163,7 +163,7 @@ resource "aws_autoscaling_policy" "main" {
 }
 
 resource "aws_lb_listener_rule" "main" {
-  listener_arn = data.aws_ssm_parameter.alb-ARN.value
+  listener_arn = local.listener_arn
   priority     = var.priority
 
   action {
