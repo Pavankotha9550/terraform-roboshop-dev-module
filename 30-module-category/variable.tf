@@ -15,7 +15,7 @@ variable "zone_name"{
 }
 
 variable "component"{
-    type = String
+    type = string
 }
 
 variable "priority"{
