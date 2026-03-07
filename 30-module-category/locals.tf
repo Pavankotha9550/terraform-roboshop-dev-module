@@ -5,4 +5,5 @@ locals {
     port = var.component == "frontend" ? 80 : 8080
     component= var.component
     #vpc_security_group_ids= data.aws_ssm_parameter.local.component.value
+    host = aws_instance.${local.component}.private_ip
 }
