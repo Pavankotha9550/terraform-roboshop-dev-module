@@ -149,7 +149,7 @@ resource "aws_autoscaling_policy" "main" {
   name                   = "${var.component}.${var.zone_name}"
   scaling_adjustment     = 1
   policy_type       = "TargetTrackingScaling"
-  instance_warmup = 100
+  #instance_warmup = 100
   #cooldown               = 100 this dosent work here
   autoscaling_group_name = aws_autoscaling_group.main.name
 
