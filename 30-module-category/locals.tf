@@ -4,5 +4,5 @@ locals {
     listener_arn = var.component == "frontend" ? data.aws_ssm_parameter.flb-ARN.value : data.aws_ssm_parameter.alb-ARN.value
     port = var.component == "frontend" ? 80 : 8080
     component= var.component
-    vpc_security_group_ids= data.aws_ssm_parameter.local.component.value
+    #vpc_security_group_ids= data.aws_ssm_parameter.local.component.value
 }
