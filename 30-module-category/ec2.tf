@@ -2,7 +2,7 @@ resource "aws_instance" "main" {
   ami           = data.aws_ami.DevOps_practice_ami_id.id
   instance_type = "t3.micro"
   vpc_security_group_ids= data.aws_ssm_parameter.sg_id.value
-  subnet_id= [local.subnet]
+  subnet_id= local.subnet
   #iam_instance_profile= "EC2RoleToFetchSSMParameter"
   
   
