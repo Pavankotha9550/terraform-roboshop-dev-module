@@ -181,7 +181,7 @@ resource "aws_lb_listener_rule" "main" {
 resource "aws_lb_target_group" "main" {
   name     = "${var.project}-${var.environment}-${var.component}"
   port     = local.port
-  protocol = "HTTP"
+  protocol = local.protocol
   vpc_id   = data.aws_ssm_parameter.vpc_id.value
   deregistration_delay = 120 #time giving to instance to complete all the pending requests to complete 
 
