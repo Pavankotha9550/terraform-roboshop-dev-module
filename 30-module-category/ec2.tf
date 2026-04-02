@@ -40,6 +40,8 @@ resource "terraform_data" "main"{
    provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
+      "sudo yum install -y dos2unix   # if not installed",
+      "dos2unix bootstrap.sh",
       "sudo sh /tmp/bootstrap.sh ${var.component}"
     ]
   }
