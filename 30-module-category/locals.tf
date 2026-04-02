@@ -8,3 +8,4 @@ locals {
     listener_arns= var.component == "frontend" ? data.aws_ssm_parameter.flb-ARN-lisitner.value : data.aws_ssm_parameter.alb-ARN-lisitner.value
     subnet = var.component == "frontend" ? split("," ,data.aws_ssm_parameter.public_subnet_id.value)[0] : split("," ,data.aws_ssm_parameter.private_subnet_id.value)[0]
     protocol= var.component == "frontend" ? "HTTPS" : "HTTP"
+}
