@@ -192,7 +192,7 @@ resource "aws_lb_target_group" "main" {
     interval = 5
     matcher = "200-299"
     path = "/health"
-    port = 8080
+    port = local.port
     timeout= 2
     unhealthy_threshold =3
   }
