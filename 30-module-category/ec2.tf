@@ -40,8 +40,8 @@ resource "terraform_data" "main"{
    provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/bootstrap.sh",
-      "sudo yum install -y dos2unix",
-      "dos2unix /tmp/bootstrap.sh",
+      "sudo yum install -y dos2unix   # if not installed",
+      "dos2unix bootstrap.sh",
       "sudo sh /tmp/bootstrap.sh ${var.component}"
     ]
   }
@@ -175,7 +175,7 @@ resource "aws_lb_listener_rule" "main" {
 
   condition {
     host_header {
-      values = ["${var.component}.daws84.cyou"]
+      values = [local.name]
     }
   }
 }
@@ -192,7 +192,7 @@ resource "aws_lb_target_group" "main" {
     interval = 5
     matcher = "200-299"
     path = "/health"
-    port = local.port
+    port = 8080
     timeout= 2
     unhealthy_threshold =3
   }
