@@ -1,4 +1,4 @@
-output "arn"{
-    value = local.listener_arns
-    sensitive = true
-}
+# output "arn"{
+#     value = local.listener_arns
+#     sensitive = true
+# }
